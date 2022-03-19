@@ -33,9 +33,8 @@ void ShowCoord(int quartNum)
         }
     }
 }
-int number;
 Console.Write("Введите номер четверти (целое число от 1 до 4): ");
-number = Convert.ToInt32(Console.ReadLine());
+int number = Convert.ToInt32(Console.ReadLine());
 ShowCoord(number);
 
 
