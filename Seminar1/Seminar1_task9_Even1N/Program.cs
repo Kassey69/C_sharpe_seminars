@@ -27,17 +27,22 @@ void even(int n)
 Console.WriteLine("Введите число ");
 int number = Convert.ToInt32(Console.ReadLine());
 even(number);
-*/
+*//*
 int even(int n)
 {
-    int a = 1;
-    while (a <= n)
+    if (n > 0) 
     {
-        Console.Write(a+ " ");
-        a++;
+        int a = 2;
+        while (a <= n)
+        {
+            Console.Write(a + " ");
+            a += 2;
+        }
+        return a;
     }
-    return a;
+    else Console.WriteLine("enter no number");return n;
 }
 Console.WriteLine("Введите число ");
 int number = Convert.ToInt32(Console.ReadLine());
 even(number);
+*/
