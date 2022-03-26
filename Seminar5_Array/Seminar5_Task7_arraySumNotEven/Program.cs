@@ -23,7 +23,7 @@ void arraySumNotEven(int[] array)
         Console.Write($"{array[i]} ");
     }    
         Console.WriteLine();
-        Console.Write($"Cумму элементов, стоящих на нечётных позициях {sum} ");
+        Console.Write($"Cумма элементов, стоящих на нечётных позициях {sum} ");
 }
 Console.WriteLine("Введите количество элементов массива ");
 int n = Convert.ToInt32(Console.ReadLine());
