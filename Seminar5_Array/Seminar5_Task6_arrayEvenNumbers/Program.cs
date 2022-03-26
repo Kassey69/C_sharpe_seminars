@@ -13,7 +13,7 @@ void arrayRandom(int[] array)
 }
 void arrayEvenNumbers(int[] array)
 {   
-    Console.Write($"Массив чётных чисел = ");
+    Console.Write($"Четные числа в массиве = ");
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {  

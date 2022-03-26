@@ -13,7 +13,7 @@ void arrayRandom(int[] array)
 void arrayCount(int[] array)
 {
     int count = 0;
-    Console.Write($"Создан массив из диапазона значений [10,99] = ");
+    Console.Write($"Найденные элементы из отрезка [10,99] = ");
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] > 10 && array[i] < 100)

@@ -23,7 +23,7 @@ void arrayNumber(int[] array, int find)
         }
     }
     Console.WriteLine();
-    if (tumbler == 1) Console.Write($"число {find} найдено, таких чисел в числе {count} ");
+    if (tumbler == 1) Console.Write($"число {find} найдено, таких чисел в массиве {count} ");
     else Console.Write($"такого числа нет");
 }
 int[] array = new int[10];

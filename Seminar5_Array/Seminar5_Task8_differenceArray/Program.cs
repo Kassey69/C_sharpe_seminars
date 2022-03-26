@@ -37,7 +37,7 @@ void differenceArray(int[] array)
     }
         result = max - min;
         Console.WriteLine($"Минимальный элемент = {min} ");
-        Console.Write($"Разницу между элементами массива: {max} - {min} =  {result} ");
+        Console.Write($"Разница между элементами массива: {max} - {min} =  {result} ");
 }
 Console.WriteLine("Введите количество элементов массива ");
 int n = Convert.ToInt32(Console.ReadLine());

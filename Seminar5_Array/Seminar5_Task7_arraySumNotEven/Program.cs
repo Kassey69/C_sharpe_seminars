@@ -15,7 +15,7 @@ void arrayRandom(int[] array)
 }
 void arraySumNotEven(int[] array)
 {   
-    Console.Write($"Новый массив = ");
+    Console.Write($"Нужные нам элементы = ");
     int sum = 0;
     for (int i = 1; i < array.Length; i+=2)
     {
