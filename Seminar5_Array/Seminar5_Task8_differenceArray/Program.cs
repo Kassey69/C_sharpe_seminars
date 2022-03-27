@@ -15,29 +15,31 @@ void arrayRandom(int[] array)
 void differenceArray(int[] array)
 {
     int max = 0;
-    int temporary = 0;
+    int max2 = 0;
     int min = 0;
     int result = 0;
     for (int i = 0; i < array.Length; i++)
-    {      
-        if (array[i] > max) 
+    {
+        if (array[i] > max)
         {
-        max = array[i];
+            max2 = max;
+            max = array[i];
         }
-        else temporary = array[i];
+        else
+        if (array[i] != max && array[i] > max2) max2 = array[i];
     }
-        Console.WriteLine($"Максимальный элемент = {max} "); 
-        min = temporary;
+    Console.WriteLine($"Максимальный элемент = {max} ");
+    min = max2;
     for (int j = 0; j < array.Length; j++)
-    {       
-        if (array[j] < min) 
+    {
+        if (array[j] < min)
         {
-        min = array[j];
+            min = array[j];
         }
     }
-        result = max - min;
-        Console.WriteLine($"Минимальный элемент = {min} ");
-        Console.Write($"Разница между элементами массива: {max} - {min} =  {result} ");
+    result = max - min;
+    Console.WriteLine($"Минимальный элемент = {min} ");
+    Console.Write($"Разница между элементами массива: {max} - {min} =  {result} ");
 }
 Console.WriteLine("Введите количество элементов массива ");
 int n = Convert.ToInt32(Console.ReadLine());
