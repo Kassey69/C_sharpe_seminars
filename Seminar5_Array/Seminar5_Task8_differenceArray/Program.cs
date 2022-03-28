@@ -5,7 +5,6 @@
 Console.WriteLine("Введите количество элементов массива ");
 int n = Convert.ToInt32(Console.ReadLine());
 double[] array = new double[n];
-{
     Console.Write($"Массив заполненный случайными числами = ");
     for (int i = 0; i < array.Length; i++)
     {
@@ -40,7 +39,6 @@ double[] array = new double[n];
     result = max - min;
     Console.WriteLine($"Минимальный элемент = {Math.Round(min,2)} ");
     Console.Write($"Разница между элементами массива: {Math.Round(max,2)} - {Math.Round(min,2)} =  {Math.Round(result,2)} ");
-}
 
 /*
 void arrayRandom(int[] array)
