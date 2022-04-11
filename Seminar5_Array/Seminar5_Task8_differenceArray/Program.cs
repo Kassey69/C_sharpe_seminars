@@ -14,21 +14,22 @@ double[] array = new double[n];
     }
     Console.WriteLine();
     double max = 0;
-    double max2 = 0;
+    //double max2 = 0;
     double min = 0;
     double result = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] > max)
         {
-            max2 = max;
+           // max2 = max;
             max = array[i];
         }
-        else
-        if (array[i] != max && array[i] > max2) max2 = array[i];
+       // else
+        //if (array[i] != max && array[i] > max2) max2 = array[i];
     }
     Console.WriteLine($"Максимальный элемент = {Math.Round(max,2)} ");
-    min = max2;
+    min = max;
+    //min = max2;
     for (int j = 0; j < array.Length; j++)
     {
         if (array[j] < min)
