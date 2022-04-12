@@ -10,13 +10,14 @@
 
 int n = 2; int m = 2; int h = 2;
 int[,,] matrix = new int[n, m, h];
+int step = 10;
 for (int i = 0; i < n; i++)
 {
     for (int j = 0; j < m; j++)
     {
         for (int k = 0; k < h; k++)
         {
-            matrix[i, j, k] = new Random().Next(11, 99);;  
+            matrix[i, j, k] = step++;
         }
     }
 }
@@ -26,8 +27,8 @@ for (int i = 0; i < n; i++)
     {
         for (int k = 0; k < h; k++)
         {
-           Console.Write($"{matrix[i, j, k]} ({i} {j} {k}) "); 
+            Console.Write($"{matrix[i, j, k]} ({i} {j} {k}) ");
         }
         Console.WriteLine();
-    }   
+    }
 }
