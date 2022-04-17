@@ -36,9 +36,9 @@ void printTriangle(int[,] triangle)
         {
            Console.Write("   ");      
         } 
-        for (int k = 0; k <= i; k++)
+        for (int j = 0; j <= i; j++)
         {
-            Console.Write($"{triangle[i, k]}     ");
+            Console.Write($"{triangle[i, j]}     ");
         }
         Console.WriteLine();
         Console.WriteLine();
