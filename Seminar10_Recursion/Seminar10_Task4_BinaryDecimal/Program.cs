@@ -1,9 +1,10 @@
 ﻿// Программа перевод чисел из двоичной системы счисления в десятичную
 
-Console.WriteLine($"Введите двоичное число");
+Console.WriteLine($"Введите двоичное число: ");
 int a = Convert.ToInt32(Console.ReadLine());
 string str = a.ToString();
 int[] array = new int[str.Length];
+Console.Write($"Двоичное число ");
 for (int i = 0; i < str.Length; i++)
 {
     array[i] = int.Parse(str[i].ToString());
@@ -23,7 +24,7 @@ if (lastDigit % 2 == 0)
     {
          help = 1;
     }
-    Console.Write($"{lastDigit  % 2 } "); //проверка есть ли 0 на конце массива
+    Console.Write($"1 или 0: {lastDigit  % 2 } "); //проверка есть ли 0 на конце массива
 for (int i = 0; i < array.Length; i++)
 {
 
@@ -31,6 +32,7 @@ for (int i = 0; i < array.Length; i++)
     //double result = Math.Pow(array[i]*2,count-i-1);
     sum += Convert.ToInt32(Math.Pow(array[i]*2, count-i-1));
 }
-if (help == 1 ) Console.Write($" {sum-1} ");
+Console.WriteLine();
+if (help == 1 ) Console.Write($"Переводим в 10-е {sum-1} ");
 else
-Console.Write($" {sum} ");
+Console.Write($"Переводим в 10-е {sum} ");
