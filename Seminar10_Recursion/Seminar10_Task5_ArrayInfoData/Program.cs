@@ -31,12 +31,11 @@ int[] data10Array(int[] datanew, int[] infonew)
     {
         string binary = "";
         int number = 0;
-        int pow = 0;
-        for (int j = infonew[i]-1; j >= 0; j--)  //2 = 2 и 1 элемент;  3 = 3 и 2 и 1 до 0 и все 4 так
+        for (int j = 0; j < infonew[i]; j++)  //2 = 2 и 1 элемент;  3 = 3 и 2 и 1 до 0 и все 4 так
         {
-            number = number + datanew[PositionData + j] * (int)Math.Pow(2, pow);
-            pow++; //c каждым числом увеличиваем степень
-                    binary =  Convert.ToString(datanew[PositionData + j] +"") + binary  ;  
+            number += datanew[PositionData + j] * (int)Math.Pow(2, infonew[i] - 1 - j);
+             //c каждым числом увеличиваем степень
+                    binary +=  Convert.ToString(datanew[PositionData + j] +"")  ;  
                                       //строчка переворачивается в зависимости где плюс                  
         }      
         Console.Write($"{binary} ");
