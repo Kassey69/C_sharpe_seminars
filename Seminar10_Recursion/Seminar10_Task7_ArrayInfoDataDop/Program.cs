@@ -29,7 +29,7 @@ int data = Convert.ToInt32(Console.ReadLine());
 string str = data.ToString();
 int[] datanew = new int[str.Length];
 //Console.Write($"Двоичное число ");
-for (int i = str.Length - 1; i >= 0; i--)
+for (int i = 0; i < str.Length; i++)
 {
     if (str[i] != '0' && str[i] != '1') // str[i] != '0'
     {
@@ -49,7 +49,7 @@ int[] data10Array(int[] datanew, int[] infonew)
 {
     int[] resultArray = new int[infonew.Length];
     int PositionData = 0;
-    Console.Write($"Двоичные числа: ");
+    Console.Write($"Введенные двоичные числа: ");
     for (int i = 0; i < infonew.Length; i++)
     {
         string binary = "";
@@ -61,8 +61,12 @@ int[] data10Array(int[] datanew, int[] infonew)
             {
                 number += datanew[PositionData] * (int)Math.Pow(2, datanew.Length - 1 - PositionData);
                 PositionData++;
-               // binary+= Convert.ToString(datanew[PositionData + i] + "") ;
+                binary+= Convert.ToString(datanew[PositionData + datanew.Length - 1 - PositionData ] + "") ;
             }
+            Console.Write($"{binary} ");
+            PositionData += infonew[i];
+            resultArray[i] = number; 
+            Console.WriteLine();
             Console.Write("Переводим в 10-е: [{0}]", string.Join(",", resultArray)); 
             return resultArray;
             }

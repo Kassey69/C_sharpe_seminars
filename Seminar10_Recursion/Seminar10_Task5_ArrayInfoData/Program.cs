@@ -36,7 +36,7 @@ int data = Convert.ToInt32(Console.ReadLine());
 string str = data.ToString();
 int[] datanew = new int[str.Length];
 //Console.Write($"Двоичное число ");
-for (int i = str.Length - 1; i >= 0; i--)
+for (int i = 0; i < str.Length; i++)
 {
     if (str[i] != '0' && str[i] != '1') // str[i] != '0'
     {
