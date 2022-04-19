@@ -67,7 +67,7 @@ int[] data10Array(int[] datanew, int[] infonew)
             PositionData += infonew[i];
             resultArray[i] = number; 
             Console.WriteLine();
-            Console.Write("Переводим в 10-е: [{0}]", string.Join(",", resultArray)); 
+            Console.Write("Переводим в 10-е, пришлось добавить недостающие элементы: [{0}]", string.Join(",", resultArray)); 
             return resultArray;
             }
                 for (int k = 0; k < infonew[i]; k++)
