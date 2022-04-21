@@ -42,7 +42,7 @@ for (int i = 0; i < str.Length; i++)
         Console.Write($"{datanew[i]}{string.Empty} ");
     }
 }
-Console.WriteLine();
+
 
 int[] array = data10Array(datanew, infonew);
 int[] data10Array(int[] datanew, int[] infonew)

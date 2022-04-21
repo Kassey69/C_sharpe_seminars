@@ -1,92 +1,122 @@
-﻿/* 33. Задать массив из 12 элементов, заполненных числами из [0,9]. 
-Найти сумму положительных/отрицательных элементов массива */
-// 0. Разобраться\ Создать репозиторий на гитхабе
-// 0.1 .gitngnir создать
-// 1. Уточнить условие
-// 2. Декомпозиция задачи. 
-// 3. Выявить главный алгоритм.
-// -. Найти сумму положительных/отрицательных элементов массива
-// 4. Проработка алгоритма - блок схема
-// 5. БЛОК-СХЕМА (Сделать картинку)
+﻿// 0. Разобраться\создать репозиторий на гитхабе
+// 0.1 .gitignore
+// 1. пока (не уточнены условия): уточнить условия
+// 2. декомпозиция задачи
+// 3. Выявить главный алгоритм
+// 4. Проработка алгоритма
+// 5. БЛОК-СХЕМА
 // 6. Писать код!
-// 7. Тестирование
-// 8. Рефакторинг (Пометочки что это /// Метод а , возвращающий а и т.д.)
-// 9. Описание и push'ите на удаленный репозиторий
-//-----------------------------------------------------------------------
+// 7. Пока нет тестов - делать тестирование
+// 8. Рефакторинг 
+// 9. push'ите
 
-/*Задать массив из 12 элементов, заполненных числами из [-9,9]. 
-Найти сумму положительных/отрицательных элементов массива 
 
-2. Декомпозиция задачи. 
-- Заполнить массив. Какими числами Рандом или другими
-- Создать массив из валидных элементов, числа которые удовлетворяют условию (т. е. > 0)
-- + Найти сумму положительных элементов массива
-- Вывод массива
-- Вывод результата
+// Задать массив из 12 элементов, 
+// заполненных числами из [-9,9]. Найти сумму 
+// положительных/отрицательных элементов массива
 
-5. БЛОК-СХЕМА
-https://app.diagrams.net/
+// New
+// Задать массив из 12 элементов, 
+// заполненных числами из [-9,9]. Найти сумму 
+// положительных элементов массива
 
-6. Писать код!
-*/
+// - заполнить массив числами от -9 до 9
+// - создать массив из валидных (т е > 0) элементов
+// - + найти сумму элементов массива из предыдущего пунка
+// - вывод массива
+// - вывод результата
 
-int size = 12;
-int[] array = new int[size];
-void resultArray(int[] array)
+int count = 12;
+// int[] arr = CreateAndFillArray(count);
+ 
+
+int[] CreateAndFillArray(int size)
 {
-    Console.Write($" Получившийся массив (");
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(-9, 10); // [-9,10)
+    }
+    return array;
+}
+
+// заполнить массив числами от -9 до 9
+void FillArray(int[] array)
+{
     int size = array.Length;
     for (int i = 0; i < size; i++)
     {
-        array[i] = new Random().Next(-9, 10); // Заполнить массив. Какими числами Рандом или другими
-        Console.Write($"{array[i]} ");
+        array[i] = new Random().Next(-9, 10); // [-9,10)
     }
-        Console.WriteLine(")");
-}
-void prunt(int[] array)
-{
-    int num1 = 0,
-        num2 = 0,
-        plus = 0,
-        minus = 0;
-    Console.Write($"Положительные числа  = ");
-        for (int j = 0; j < array.Length; j++)
-        {
-            if (array[j] > 0) 
-            {
-                plus += array[j];
-                num1 = array[j];
-                Console.Write($"{num1} "); 
-            }
-        }
-        Console.WriteLine();
-        Console.WriteLine($"сумма положительных чисел = {plus} "); //Вывод результата
-        Console.Write($"Отрицательные числа  = ");
-        for (int k = 0; k < 12; k++) 
-        {
-            if (array[k] < 0) 
-            {
-                minus += array[k];    
-                num2 = array[k];   
-                Console.Write($"{num2} ");      //Вывод результата 
-            }               
-        }        
-    Console.WriteLine();
-    Console.WriteLine($"сумма отрицательных чисел = {minus} "); //Вывод результата
 }
 
-void SumItem(int [] arrayInput)
+// Печать массива
+string PrintArray(int[] array)
 {
-    int len = arrayInput.Length,
-    resultSum = 0,
-    index = 0;
+    int size = array.Length;
+    string print = String.Empty;
+    for (int i = 0; i < size; i++)
+    {
+        print += $"{array[i]} ";
+    }
+    return print;
+}
+
+// создать массив из валидных (т е > 0) элементов
+int[] GetValidArray(int[] array)
+{
+    int size = array.Length;
+
+    int count = 0;
+
+    for (int i = 0; i < size; i++)
+    {
+        if (array[i] > 0)
+        {
+            count++;
+        }
+    }
+    int[] validArray = new int[count];
+
+    int j = 0;
+    for (int i = 0; i < size; i++)
+    {
+        if (array[i] > 0)
+        {
+            validArray[j++] = array[i];
+        }
+    }
+    return validArray;
+}
+
+
+// найти сумму элементов массива из предыдущего пунка
+int SumItems(int[] arrayInput)
+{
+    int len = arrayInput.Length;
+    int resultSum = 0;
+    int index = 0;
+
     while (index < len)
     {
-    resultSum += arrayInput[index];
-    index += 1;
+        resultSum += arrayInput[index];
+        index += 1;
     }
-    Console.WriteLine(resultSum);
+
+    return resultSum;
 }
-resultArray(array); // Вывод массива
-prunt(array);
-SumItem(array);
+
+count = 12;
+// int[] arr = CreateAndFillArray(count);
+int[] inputArr = new int[count];
+FillArray(inputArr);
+Console.WriteLine(PrintArray(inputArr));
+Console.WriteLine();
+
+int[] valid = GetValidArray(inputArr);
+Console.WriteLine(PrintArray(valid));
+
+File.WriteAllText("file.txt", PrintArray(valid));
+int sum = SumItems(valid);
+Console.WriteLine();
+Console.WriteLine($"sum = {sum}");
